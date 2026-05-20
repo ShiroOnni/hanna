@@ -32,12 +32,10 @@ const services = [
 ]
 
 const gallery = [
-  { src: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=80', alt: 'Henné main motifs orientaux' },
-  { src: 'https://images.unsplash.com/photo-1518611540400-6b85a0704342?w=600&q=80', alt: 'Henné pied arabesque' },
-  { src: 'https://images.unsplash.com/photo-1609357605129-26f69add5d6e?w=600&q=80', alt: 'Henné mariée' },
-  { src: 'https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=600&q=80', alt: 'Henné moderne géométrique' },
-  { src: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80', alt: 'Henné soirée bras' },
-  { src: 'https://images.unsplash.com/photo-1583001931096-959e9a1a6223?w=600&q=80', alt: 'Henné floral' },
+  { src: '/henna1.jpg', alt: 'Henné floral oriental sur la main' },
+  { src: '/henna2.jpg', alt: 'Henné géométrique sous lumière UV' },
+  { src: '/henna3.jpg', alt: 'Henné floral rouge sur la main' },
+  { src: '/henna4.jpg', alt: 'Henné arabesque détaillé sur la main' },
 ]
 
 export default function HennaPage() {
@@ -48,7 +46,7 @@ export default function HennaPage() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1604654894610-df63bc536371?w=1400&q=90')`,
+            backgroundImage: `url('/henna4.jpg')`,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#0A0A0A]" />
@@ -106,7 +104,7 @@ export default function HennaPage() {
           <div className="relative">
             <div className="relative h-80 rounded-2xl overflow-hidden border border-[#C9A84C]/10">
               <Image
-                src="https://images.unsplash.com/photo-1583001931096-959e9a1a6223?w=600&q=80"
+                src="/henna2.jpg"
                 alt="Syrine artiste henné"
                 fill
                 className="object-cover"
