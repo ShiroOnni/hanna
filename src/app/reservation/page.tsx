@@ -7,14 +7,13 @@ import { Textarea } from '@/components/ui/textarea'
 import { CheckCircle, Calendar, Clock, User } from 'lucide-react'
 
 const services = [
-  { id: 'henna-oriental', label: 'Henné Oriental', artist: 'Syrine', duration: '1h – 2h' },
-  { id: 'henna-moderne', label: 'Henné Moderne', artist: 'Syrine', duration: '45min – 1h30' },
+  { id: 'henna-simple', label: 'Henné Simple', artist: 'Syrine', duration: 'Rapide' },
+  { id: 'henna-complexe', label: 'Henné Complexe', artist: 'Syrine', duration: 'Sur place' },
   { id: 'henna-mariee', label: 'Forfait Mariée', artist: 'Syrine', duration: '3h – 5h' },
   { id: 'henna-soiree', label: 'Henné Soirée', artist: 'Syrine', duration: '2h – 3h' },
-  { id: 'blanchiment-express', label: 'Blanchiment Express', artist: 'Mariame', duration: '60 min' },
-  { id: 'blanchiment-intensif', label: 'Traitement Intensif', artist: 'Mariame', duration: '3 séances' },
-  { id: 'blanchiment-entretien', label: 'Séance Entretien', artist: 'Mariame', duration: '45 min' },
-  { id: 'blanchiment-duo', label: 'Pack Duo', artist: 'Mariame', duration: '60 min' },
+  { id: 'blanchiment-1ere', label: '1ère Séance', artist: 'Mariam', duration: '60 min' },
+  { id: 'blanchiment-2eme', label: '2ème Séance', artist: 'Mariam', duration: '60 min' },
+  { id: 'blanchiment-retouche', label: 'Retouche', artist: 'Mariam', duration: '45 min' },
 ]
 
 type FormData = {
@@ -90,7 +89,7 @@ export default function ReservationPage() {
           Réserver <span className="shimmer-text">ma séance</span>
         </h1>
         <p className="text-white/40 max-w-md mx-auto font-light text-lg">
-          Henné avec Syrine ou blanchiment avec Mariame — choisissez votre prestation et votre créneau.
+          Henné avec Syrine ou blanchiment avec Mariam — choisissez votre prestation et votre créneau.
         </p>
       </section>
 
@@ -124,23 +123,23 @@ export default function ReservationPage() {
               </ul>
             </div>
 
-            {/* Mariame card */}
+            {/* Mariam card */}
             <div className="p-5 rounded-2xl border border-[#C9A84C]/15 bg-white/3">
               <div className="flex items-center gap-4 mb-3">
                 <Image
                   src="/logo-dentaire.png"
-                  alt="Mariame"
+                  alt="Mariam"
                   width={48}
                   height={48}
                   className="rounded-full object-cover border border-[#C9A84C]/30"
                 />
                 <div>
-                  <p className="text-white font-medium">Mariame</p>
+                  <p className="text-white font-medium">Mariam</p>
                   <p className="text-white/40 text-xs tracking-wider uppercase">Praticienne blanchiment</p>
                 </div>
               </div>
               <ul className="space-y-1.5">
-                {services.filter(s => s.artist === 'Mariame').map(s => (
+                {services.filter(s => s.artist === 'Mariam').map(s => (
                   <li key={s.id} className="flex justify-between text-xs text-white/50">
                     <span>{s.label}</span>
                     <span className="text-[#C9A84C]/60">{s.duration}</span>
@@ -237,8 +236,8 @@ export default function ReservationPage() {
                       </option>
                     ))}
                   </optgroup>
-                  <optgroup label="— Blanchiment (Mariame)" className="bg-[#1a1a1a]">
-                    {services.filter(s => s.artist === 'Mariame').map(s => (
+                  <optgroup label="— Blanchiment (Mariam)" className="bg-[#1a1a1a]">
+                    {services.filter(s => s.artist === 'Mariam').map(s => (
                       <option key={s.id} value={s.id} className="bg-[#1a1a1a] text-white">
                         {s.label} ({s.duration})
                       </option>
