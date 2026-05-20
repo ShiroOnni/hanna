@@ -38,18 +38,30 @@ export default function ReservationPage() {
   })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
+    setError('')
+    const selectedLabel = services.find(s => s.id === form.service)?.label ?? form.service
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...form, service: selectedLabel }),
+      })
+      if (!res.ok) throw new Error()
       setSubmitted(true)
-    }, 1500)
+    } catch {
+      setError('Une erreur est survenue. Réessayez ou contactez-nous directement.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   const selectedService = services.find(s => s.id === form.service)
@@ -301,6 +313,9 @@ export default function ReservationPage() {
                 {loading ? 'Envoi en cours…' : 'Envoyer ma demande'}
               </button>
 
+              {error && (
+                <p className="text-center text-red-400 text-xs mt-3">{error}</p>
+              )}
               <p className="text-center text-white/25 text-xs mt-4">
                 Confirmation par email ou téléphone sous 24h
               </p>
