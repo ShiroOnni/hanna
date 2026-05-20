@@ -53,7 +53,7 @@ export default function BlanchimentPage() {
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=1400&q=90')` }}
+          style={{ backgroundImage: `url('/mariam-studio.jpg')` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#0A0A0A]" />
         <div className="relative z-10 text-center px-6 fade-in-up">
@@ -114,8 +114,8 @@ export default function BlanchimentPage() {
           <div className="relative order-2 md:order-1">
             <div className="relative h-80 rounded-2xl overflow-hidden border border-[#C9A84C]/10">
               <Image
-                src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&q=80"
-                alt="Mariam praticienne blanchiment"
+                src="/mariam-resultat.jpg"
+                alt="Résultat blanchiment dentaire"
                 fill
                 className="object-cover"
               />
