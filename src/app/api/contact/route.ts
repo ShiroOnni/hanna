@@ -2,7 +2,7 @@ import { Resend } from 'resend'
 import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {
-  const resend = new Resend(process.env.RESEND_API_KEY)
+  const resend = new Resend(process.env.RESEND_API_KEY ?? 'missing')
   const { name, email, phone, service, date, time, message } = await req.json()
 
   if (!name || !email || !phone || !service || !date) {
