@@ -32,10 +32,14 @@ const services = [
 ]
 
 const gallery = [
-  { src: '/henna1.jpg', alt: 'Henné floral oriental sur la main' },
-  { src: '/henna2.jpg', alt: 'Henné géométrique sous lumière UV' },
-  { src: '/henna3.jpg', alt: 'Henné floral rouge sur la main' },
-  { src: '/henna4.jpg', alt: 'Henné arabesque détaillé sur la main' },
+  { src: '/sy1.jpg', alt: 'Henné floral sur la main' },
+  { src: '/sy2.jpg', alt: 'Henné floral rouge sur fond bleu' },
+  { src: '/sy3.jpg', alt: 'Henné géométrique deux mains' },
+  { src: '/sy4.jpg', alt: 'Henné floral deux mains' },
+  { src: '/sy5.jpg', alt: 'Henné géométrique berbère' },
+  { src: '/sy6.jpg', alt: 'Henné symétrique deux mains' },
+  { src: '/sy7.jpg', alt: 'Henné géométrique carré' },
+  { src: '/sy8.jpg', alt: 'Henné soirée groupe de mains' },
 ]
 
 const socials = [
@@ -51,7 +55,7 @@ export default function HennaPage() {
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url('/henna4.jpg')` }}
+          style={{ backgroundImage: `url('/sy8.jpg')` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#0A0A0A]" />
         <div className="relative z-10 text-center px-6 fade-in-up">
@@ -122,7 +126,7 @@ export default function HennaPage() {
           </div>
           <div className="relative">
             <div className="relative h-80 rounded-2xl overflow-hidden border border-[#C9A84C]/10">
-              <Image src="/henna2.jpg" alt="Syrine artiste henné" fill className="object-cover" />
+              <Image src="/sy2.jpg" alt="Syrine artiste henné" fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             </div>
             <div className="absolute -bottom-4 -right-4 bg-[#C9A84C] text-black text-xs font-semibold px-4 py-2 rounded-full">
@@ -163,7 +167,7 @@ export default function HennaPage() {
         <h2 className="font-playfair text-4xl text-white text-center mb-12">
           <span className="shimmer-text">Galerie</span>
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {gallery.map((img, i) => (
             <div key={i} className="relative aspect-square rounded-xl overflow-hidden group cursor-pointer">
               <Image
