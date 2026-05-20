@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { Navbar } from '@/components/navbar'
+import { AudioPlayer } from '@/components/audio-player'
 
 export const metadata: Metadata = {
   title: 'Sy Henna & Blanchiment Dentaire',
@@ -13,6 +14,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className="min-h-full bg-[#0A0A0A] text-white antialiased">
         <Navbar />
         {children}
+        <AudioPlayer />
       </body>
     </html>
   )
